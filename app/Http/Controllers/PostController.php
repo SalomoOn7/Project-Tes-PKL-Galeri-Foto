@@ -35,7 +35,7 @@ class PostController extends Controller
             'description' => $request->description,
             'filename' => $path
             ]);
-            return redirect('/posts/my');
+            return redirect('/posts/my')->with('success', 'Foto berhasil diupload!');
     }
 
     public function show(Post $post)
@@ -72,7 +72,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->save();
-        return redirect('posts/my');
+        return redirect('posts/my')->with('success', 'Foto berhasil diperbarui!');
     }
 
     public function destroy(Post $post)
