@@ -22,7 +22,7 @@ class LikeController extends Controller
         Like::create([
             'post_id' => $request->post_id,
             'user_id' => auth()->user()->id
-        ]);
+        ]); 
 
         return redirect()->back();
     }
